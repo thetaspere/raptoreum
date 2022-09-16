@@ -1,7 +1,7 @@
-Contributing to Raptoreum Core
+Contributing to Theta Core
 ============================
 
-The Raptoreum Core project operates an open contributor model where anyone is
+The Theta Core project operates an open contributor model where anyone is
 welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
@@ -57,7 +57,7 @@ the pull request affects. Valid areas as:
 
   - *Consensus* for changes to consensus critical code
   - *Docs* for changes to the documentation
-  - *Qt* for changes to raptoreum-qt
+  - *Qt* for changes to theta-qt
   - *Mining* for changes to the mining code
   - *Net* or *P2P* for changes to the peer-to-peer network code
   - *RPC/REST/ZMQ* for changes to the RPC, REST or ZMQ APIs
@@ -82,7 +82,7 @@ Examples:
     Trivial: Fix typo in init.cpp
 
 Note that translations should not be submitted as pull requests, please see
-[Translation Process](https://github.com/Raptor3um/raptoreum/blob/master/doc/translation_process.md) 
+[Translation Process](https://github.com/Raptor3um/theta/blob/master/doc/translation_process.md) 
 for more information on helping with translations.
 
 If a pull request is not to be considered for merging (yet), please
@@ -161,11 +161,11 @@ where possible keep them short, uncomplex and easy to verify.
 "Decision Making" Process
 -------------------------
 
-The following applies to code changes to the Raptoreum Core project (and related
-projects such as libsecp256k1), and is not to be confused with overall Raptoreum
+The following applies to code changes to the Theta Core project (and related
+projects such as libsecp256k1), and is not to be confused with overall Theta
 Network Protocol consensus changes.
 
-Whether a pull request is merged into Raptoreum Core rests with the project merge
+Whether a pull request is merged into Theta Core rests with the project merge
 maintainers and ultimately the project lead.
 
 Maintainers will take into consideration if a patch is in line with the general
@@ -183,7 +183,7 @@ In general, all pull requests must:
   - Where bugs are fixed, where possible, there should be unit tests
     demonstrating the bug and also proving the fix. This helps prevent regression.
 
-Patches that change Raptoreum consensus rules are considerably more involved than
+Patches that change Theta consensus rules are considerably more involved than
 normal because they affect the entire ecosystem and so must be preceded by
 extensive mailing list discussions and have a numbered BIP. While each case will
 be different, one should be prepared to expend more time and effort than for
@@ -224,7 +224,7 @@ higher in terms of discussion and peer review requirements, keeping in mind that
 mistakes could be very costly to the wider community. This includes refactoring
 of consensus critical code.
 
-Where a patch set proposes to change the Raptoreum consensus, it must have been
+Where a patch set proposes to change the Theta consensus, it must have been
 discussed extensively on the mailing list and IRC, be accompanied by a widely
 discussed BIP and have a generally widely perceived technical consensus of being
 a worthwhile change based on the judgement of the maintainers.
@@ -250,7 +250,7 @@ function gfd() {
 
 ### Finding Reviewers
 
-The review process is normally fairly responsive on the Raptoreum Core repository, however
+The review process is normally fairly responsive on the Theta Core repository, however
 this might not always be the case. If you find that you've been waiting
 for a pull request to be given attention for several months, there may be a number
 of reasons for this, some of which you can do something about:
@@ -282,7 +282,7 @@ of reasons for this, some of which you can do something about:
 Release Policy
 --------------
 
-The project leader is the release manager for each Raptoreum Core release.
+The project leader is the release manager for each Theta Core release.
 
 Copyright
 ---------

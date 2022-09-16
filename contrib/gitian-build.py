@@ -23,13 +23,13 @@ def setup():
             exit(1)
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
     if not os.path.isdir('gitian.sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/raptoreum/gitian.sigs.git'])
-    if not os.path.isdir('raptoreum-detached-sigs'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/raptoreum/raptoreum-detached-sigs.git'])
+        subprocess.check_call(['git', 'clone', 'https://github.com/theta/gitian.sigs.git'])
+    if not os.path.isdir('theta-detached-sigs'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/theta/theta-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
         subprocess.check_call(['git', 'clone', 'https://github.com/devrandom/gitian-builder.git'])
-    if not os.path.isdir('raptoreum'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/raptoreum/raptoreum.git'])
+    if not os.path.isdir('theta'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/theta/theta.git'])
     os.chdir('gitian-builder')
     make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
     if args.docker:
@@ -46,36 +46,36 @@ def setup():
 def build():
     global args, workdir
 
-    os.makedirs('raptoreumcore-binaries/' + args.version, exist_ok=True)
+    os.makedirs('thetacore-binaries/' + args.version, exist_ok=True)
     print('\nBuilding Dependencies\n')
     os.chdir('gitian-builder')
     os.makedirs('inputs', exist_ok=True)
 
     subprocess.check_call(['wget', '-O', 'inputs/osslsigncode-2.0.tar.gz', 'https://github.com/mtrojnar/osslsigncode/archive/2.0.tar.gz'])
     subprocess.check_call(["echo '5a60e0a4b3e0b4d655317b2f12a810211c50242138322b16e7e01c6fbb89d92f inputs/osslsigncode-2.0.tar.gz' | sha256sum -c"], shell=True)
-    subprocess.check_call(['make', '-C', '../raptoreum/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
+    subprocess.check_call(['make', '-C', '../theta/depends', 'download', 'SOURCES_PATH=' + os.getcwd() + '/cache/common'])
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'raptoreum='+args.commit, '--url', 'raptoreum='+args.url, '../raptoreum/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../raptoreum/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call('mv build/out/raptoreumcore-*.tar.gz build/out/src/raptoreumcore-*.tar.gz ../raptoreumcore-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'theta='+args.commit, '--url', 'theta='+args.url, '../theta/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../theta/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call('mv build/out/thetacore-*.tar.gz build/out/src/thetacore-*.tar.gz ../thetacore-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'raptoreum='+args.commit, '--url', 'raptoreum='+args.url, '../raptoreum/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../raptoreum/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call('mv build/out/raptoreumcore-*-win-unsigned.tar.gz inputs/raptoreumcore-win-unsigned.tar.gz', shell=True)
-        subprocess.check_call('mv build/out/raptoreumcore-*.zip build/out/raptoreumcore-*.exe ../raptoreumcore-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'theta='+args.commit, '--url', 'theta='+args.url, '../theta/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../theta/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call('mv build/out/thetacore-*-win-unsigned.tar.gz inputs/thetacore-win-unsigned.tar.gz', shell=True)
+        subprocess.check_call('mv build/out/thetacore-*.zip build/out/thetacore-*.exe ../thetacore-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
         subprocess.check_call(['wget', '-N', '-P', 'inputs', 'https://bitcoincore.org/depends-sources/sdks/MacOSX10.11.sdk.tar.gz'])
         subprocess.check_output(["echo 'bec9d089ebf2e2dd59b1a811a38ec78ebd5da18cbbcd6ab39d1e59f64ac5033f inputs/MacOSX10.11.sdk.tar.gz' | sha256sum -c"], shell=True)
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'raptoreum='+args.commit, '--url', 'raptoreum='+args.url, '../raptoreum/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../raptoreum/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call('mv build/out/raptoreumcore-*-osx-unsigned.tar.gz inputs/raptoreumcore-osx-unsigned.tar.gz', shell=True)
-        subprocess.check_call('mv build/out/raptoreumcore-*.tar.gz build/out/raptoreumcore-*.dmg ../raptoreumcore-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'theta='+args.commit, '--url', 'theta='+args.url, '../theta/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../theta/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call('mv build/out/thetacore-*-osx-unsigned.tar.gz inputs/thetacore-osx-unsigned.tar.gz', shell=True)
+        subprocess.check_call('mv build/out/thetacore-*.tar.gz build/out/thetacore-*.dmg ../thetacore-binaries/'+args.version, shell=True)
 
     os.chdir(workdir)
 
@@ -94,16 +94,16 @@ def sign():
 
     if args.windows:
         print('\nSigning ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../raptoreum/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../raptoreum/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call('mv build/out/raptoreumcore-*win64-setup.exe ../raptoreumcore-binaries/'+args.version, shell=True)
-        subprocess.check_call('mv build/out/raptoreumcore-*win32-setup.exe ../raptoreumcore-binaries/'+args.version, shell=True)
+        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../theta/contrib/gitian-descriptors/gitian-win-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs/', '../theta/contrib/gitian-descriptors/gitian-win-signer.yml'])
+        subprocess.check_call('mv build/out/thetacore-*win64-setup.exe ../thetacore-binaries/'+args.version, shell=True)
+        subprocess.check_call('mv build/out/thetacore-*win32-setup.exe ../thetacore-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nSigning ' + args.version + ' MacOS')
-        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../raptoreum/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../raptoreum/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call('mv build/out/raptoreumcore-osx-signed.dmg ../raptoreumcore-binaries/'+args.version+'/raptoreumcore-'+args.version+'-osx.dmg', shell=True)
+        subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../theta/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs/', '../theta/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+        subprocess.check_call('mv build/out/thetacore-osx-signed.dmg ../thetacore-binaries/'+args.version+'/thetacore-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
@@ -120,15 +120,15 @@ def verify():
     os.chdir('gitian-builder')
 
     print('\nVerifying v'+args.version+' Linux\n')
-    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../raptoreum/contrib/gitian-descriptors/gitian-linux.yml'])
+    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-linux', '../theta/contrib/gitian-descriptors/gitian-linux.yml'])
     print('\nVerifying v'+args.version+' Windows\n')
-    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../raptoreum/contrib/gitian-descriptors/gitian-win.yml'])
+    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-unsigned', '../theta/contrib/gitian-descriptors/gitian-win.yml'])
     print('\nVerifying v'+args.version+' MacOS\n')
-    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../raptoreum/contrib/gitian-descriptors/gitian-osx.yml'])
+    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-unsigned', '../theta/contrib/gitian-descriptors/gitian-osx.yml'])
     print('\nVerifying v'+args.version+' Signed Windows\n')
-    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../raptoreum/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-win-signed', '../theta/contrib/gitian-descriptors/gitian-win-signer.yml'])
     print('\nVerifying v'+args.version+' Signed MacOS\n')
-    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../raptoreum/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.call(['bin/gverify', '-v', '-d', '../gitian.sigs/', '-r', args.version+'-osx-signed', '../theta/contrib/gitian-descriptors/gitian-osx-signer.yml'])
 
     os.chdir(workdir)
 
@@ -138,7 +138,7 @@ def main():
     parser = argparse.ArgumentParser(usage='%(prog)s [options] signer version')
     parser.add_argument('-c', '--commit', action='store_true', dest='commit', help='Indicate that the version argument is for a commit or branch')
     parser.add_argument('-p', '--pull', action='store_true', dest='pull', help='Indicate that the version argument is the number of a github repository pull request')
-    parser.add_argument('-u', '--url', dest='url', default='https://github.com/raptoreum/raptoreum', help='Specify the URL of the repository. Default is %(default)s')
+    parser.add_argument('-u', '--url', dest='url', default='https://github.com/theta/theta', help='Specify the URL of the repository. Default is %(default)s')
     parser.add_argument('-v', '--verify', action='store_true', dest='verify', help='Verify the Gitian build')
     parser.add_argument('-b', '--build', action='store_true', dest='build', help='Do a Gitian build')
     parser.add_argument('-s', '--sign', action='store_true', dest='sign', help='Make signed binaries for Windows and MacOS')
@@ -214,10 +214,10 @@ def main():
     if not args.build and not args.sign and not args.verify:
         exit(0)
 
-    os.chdir('raptoreum')
+    os.chdir('theta')
     if args.pull:
         subprocess.check_call(['git', 'fetch', args.url, 'refs/pull/'+args.version+'/merge'])
-        os.chdir('../gitian-builder/inputs/raptoreum')
+        os.chdir('../gitian-builder/inputs/theta')
         subprocess.check_call(['git', 'fetch', args.url, 'refs/pull/'+args.version+'/merge'])
         args.commit = subprocess.check_output(['git', 'show', '-s', '--format=%H', 'FETCH_HEAD'], universal_newlines=True, encoding='utf8').strip()
         args.version = 'pull-' + args.version

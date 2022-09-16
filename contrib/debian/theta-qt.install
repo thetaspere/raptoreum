@@ -1,0 +1,6 @@
+usr/local/bin/theta-qt usr/bin
+share/pixmaps/theta32.xpm usr/share/pixmaps
+share/pixmaps/theta16.xpm usr/share/pixmaps
+share/pixmaps/theta128.png usr/share/pixmaps
+debian/theta-qt.desktop usr/share/applications
+debian/theta-qt.protocol usr/share/kde4/services/

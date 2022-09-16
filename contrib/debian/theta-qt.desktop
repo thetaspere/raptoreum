@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Theta Core
+Comment=Theta P2P Cryptocurrency
+Comment[de]=Verbinde mit dem Theta peer-to-peer Netzwerk
+Comment[fr]=Theta, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Theta, eşten eşe kriptografik sanal para birimi
+Exec=theta-qt %u
+Terminal=false
+Type=Application
+Icon=theta128
+MimeType=x-scheme-handler/theta;
+Categories=Office;Finance;

@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: raptoreumd.service
-Upstart: raptoreumd.conf
-OpenRC:  raptoreumd.openrc
-         raptoreumd.openrcconf
-CentOS:  raptoreumd.init
-OS X:    org.raptoreum.raptoreumd.plist
+SystemD: thetad.service
+Upstart: thetad.conf
+OpenRC:  thetad.openrc
+         thetad.openrcconf
+CentOS:  thetad.init
+OS X:    org.theta.thetad.plist
 ```
 have been made available to assist packagers in creating node packages here.
 
