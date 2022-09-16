@@ -20,7 +20,7 @@
 #include <util.h>
 #include <utilstrencodings.h>
 
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <memory>
 

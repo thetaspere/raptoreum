@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2020 The Dash Core developers
-// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2020-2022 The Theta developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAPTOREUM_EVODB_H
-#define RAPTOREUM_EVODB_H
+#ifndef THETA_EVODB_H
+#define THETA_EVODB_H
 
 #include <dbwrapper.h>
 #include <sync.h>
@@ -113,4 +113,4 @@ private:
 
 extern std::unique_ptr<CEvoDB> evoDb;
 
-#endif //RAPTOREUM_EVODB_H
+#endif //THETA_EVODB_H

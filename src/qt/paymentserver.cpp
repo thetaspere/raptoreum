@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2020 The Dash Core developers
-// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2020-2022 The Theta developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -46,14 +46,14 @@
 #include <QUrlQuery>
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("raptoreum:");
+const QString BITCOIN_IPC_PREFIX("theta:");
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 // BIP71 payment protocol media types
-const char* BIP71_MIMETYPE_PAYMENT = "application/raptoreum-payment";
-const char* BIP71_MIMETYPE_PAYMENTACK = "application/raptoreum-paymentack";
-const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/raptoreum-paymentrequest";
+const char* BIP71_MIMETYPE_PAYMENT = "application/theta-payment";
+const char* BIP71_MIMETYPE_PAYMENTACK = "application/theta-paymentack";
+const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/theta-paymentrequest";
 
 struct X509StoreDeleter {
       void operator()(X509_STORE* b) {
@@ -77,7 +77,7 @@ namespace // Anon namespace
 //
 static QString ipcServerName()
 {
-    QString name("RaptoreumQt");
+    QString name("ThetaQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -200,11 +200,11 @@ void PaymentServer::ipcParseCommandLine(interfaces::Node& node, int argc, char* 
         if (arg.startsWith("-"))
             continue;
 
-        // If the raptoreum: URI contains a payment request, we are not able to detect the
+        // If the theta: URI contains a payment request, we are not able to detect the
         // network as that would require fetching and parsing the payment request.
         // That means clicking such an URI which contains a testnet payment request
         // will start a mainnet instance and throw a "wrong network" error.
-        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // raptoreum: URI
+        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // theta: URI
         {
             savedPaymentRequests.append(arg);
 
@@ -300,7 +300,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
     GOOGLE_PROTOBUF_VERIFY_VERSION;
 
     // Install global event filter to catch QFileOpenEvents
-    // on Mac: sent when you click raptoreum: links
+    // on Mac: sent when you click theta: links
     // other OSes: helpful when dealing with payment request files
     if (parent)
         parent->installEventFilter(this);
@@ -317,7 +317,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start raptoreum: click-to-pay handler"));
+                tr("Cannot start theta: click-to-pay handler"));
         }
         else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));
@@ -332,7 +332,7 @@ PaymentServer::~PaymentServer()
 }
 
 //
-// OSX-specific way of handling raptoreum: URIs and PaymentRequest mime types.
+// OSX-specific way of handling theta: URIs and PaymentRequest mime types.
 // Also used by paymentservertests.cpp and when opening a payment request file
 // via "Open URI..." menu entry.
 //
@@ -357,7 +357,7 @@ void PaymentServer::initNetManager()
         return;
     delete netManager;
 
-    // netManager is used to fetch paymentrequests given in raptoreum: URIs
+    // netManager is used to fetch paymentrequests given in theta: URIs
     netManager = new QNetworkAccessManager(this);
 
     QNetworkProxy proxy;
@@ -397,12 +397,12 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("raptoreum://", Qt::CaseInsensitive))
+    if (s.startsWith("theta://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'raptoreum://' is not a valid URI. Use 'raptoreum:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'theta://' is not a valid URI. Use 'theta:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
-    else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // raptoreum: URI
+    else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // theta: URI
     {
         QUrlQuery uri((QUrl(s)));
         if (uri.hasQueryItem("r")) // payment request URI
@@ -441,7 +441,7 @@ void PaymentServer::handleURIOrFile(const QString& s)
             }
             else
                 Q_EMIT message(tr("URI handling"),
-                    tr("URI cannot be parsed! This can be caused by an invalid Raptoreum address or malformed URI parameters."),
+                    tr("URI cannot be parsed! This can be caused by an invalid Theta address or malformed URI parameters."),
                     CClientUIInterface::ICON_WARNING);
 
             return;
@@ -553,7 +553,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
             addresses.append(QString::fromStdString(EncodeDestination(dest)));
         }
         else if (!recipient.authenticatedMerchant.isEmpty()) {
-            // Unauthenticated payment requests to custom raptoreum addresses are not supported
+            // Unauthenticated payment requests to custom theta addresses are not supported
             // (there is no good way to tell the user where they are paying in a way they'd
             // have a chance of understanding).
             Q_EMIT message(tr("Payment request rejected"),
@@ -562,7 +562,7 @@ bool PaymentServer::processPaymentRequest(const PaymentRequestPlus& request, Sen
             return false;
         }
 
-        // Raptoreum amounts are stored as (optional) uint64 in the protobuf messages (see paymentrequest.proto),
+        // Theta amounts are stored as (optional) uint64 in the protobuf messages (see paymentrequest.proto),
         // but CAmount is defined as int64_t. Because of that we need to verify that amounts are in a valid range
         // and no overflow has happened.
         if (!verifyAmount(sendingTo.second)) {

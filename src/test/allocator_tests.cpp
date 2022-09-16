@@ -5,7 +5,7 @@
 #include <util.h>
 
 #include <support/allocators/secure.h>
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <memory>
 

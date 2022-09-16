@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2021 The Dash Core developers
-// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2020-2022 The Theta developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -157,7 +157,7 @@ UniValue getrawtransaction(const JSONRPCRequest& request)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"address\"        (string) raptoreum address\n"
+            "           \"address\"        (string) theta address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -400,15 +400,15 @@ UniValue createrawtransaction(const JSONRPCRequest& request)
             "2. \"outputs\"               (array, required) a json array with outputs (key-value pairs)\n"
             "   [\n"
             "    {\n"
-            "      \"address\": x.xxx,    (obj, optional) A key-value pair. The key (string) is the raptoreum address, the value (float or string) is the amount in " + CURRENCY_UNIT + "\n"
+            "      \"address\": x.xxx,    (obj, optional) A key-value pair. The key (string) is the theta address, the value (float or string) is the amount in " + CURRENCY_UNIT + "\n"
             "    },\n"
             "    {\n"
-            "      \"address\":           (obj, optional) A key-value pair. The key (string) is the raptoreum address, value is a json string, numberic pair for future_maturity, future_locktime, and future_amount\n"
+            "      \"address\":           (obj, optional) A key-value pair. The key (string) is the theta address, value is a json string, numberic pair for future_maturity, future_locktime, and future_amount\n"
             "                                   There can only one address contain future information. A future transaction is mature when there is enough confiration (future_maturity) or time (future_locktime)\n"
             "        {\n"
             "           \"future_maturity\":n, (numeric, required) number of confirmation for this future to mature.\n"
             "           \"future_locktime\":n  (numeric, required) total time in seconds from its first confirmation for this future to mature\n"
-            "           \"future_amount\":n    (numeric, required) raptoreum amount to be locked\n"
+            "           \"future_amount\":n    (numeric, required) theta amount to be locked\n"
             "         }\n"
             "    },\n"                                                                                                                                                                                                                                                                                                                                              "    },\n"
             "    {\n"
@@ -512,7 +512,7 @@ UniValue createrawtransaction(const JSONRPCRequest& request)
         } else {
             CTxDestination destination = DecodeDestination(name_);
             if (!IsValidDestination(destination)) {
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Raptoreum address: ") + name_);
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Theta address: ") + name_);
             }
 
             if (!destinations.insert(destination).second) {
@@ -599,7 +599,7 @@ UniValue decoderawtransaction(const JSONRPCRequest& request)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG\"   (string) Raptoreum address\n"
+            "           \"XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwG\"   (string) Theta address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -644,7 +644,7 @@ UniValue decodescript(const JSONRPCRequest& request)
             "  \"type\":\"type\", (string) The output type\n"
             "  \"reqSigs\": n,    (numeric) The required signatures\n"
             "  \"addresses\": [   (json array of string)\n"
-            "     \"address\"     (string) raptoreum address\n"
+            "     \"address\"     (string) theta address\n"
             "     ,...\n"
             "  ],\n"
             "  \"p2sh\",\"address\" (string) address of P2SH script wrapping this redeem script (not returned if the script is already a P2SH).\n"
@@ -1075,7 +1075,7 @@ UniValue signrawtransaction(const JSONRPCRequest& request)
 
     if (!IsDeprecatedRPCEnabled("signrawtransaction")) {
         throw JSONRPCError(RPC_METHOD_DEPRECATED, "signrawtransaction is deprecated and will be fully removed in v0.18. "
-            "To use signrawtransaction in v0.17, restart raptoreumd with -deprecatedrpc=signrawtransaction.\n"
+            "To use signrawtransaction in v0.17, restart thetad with -deprecatedrpc=signrawtransaction.\n"
             "Projects should transition to using signrawtransactionwithkey and signrawtransactionwithwallet before upgrading to v0.18");
     }
 

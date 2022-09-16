@@ -102,7 +102,7 @@ public:
         vOutpoints.assign(setSelected.begin(), setSelected.end());
     }
 
-    // Raptoreum-specific helpers
+    // Theta-specific helpers
 
     void UseCoinJoin(bool fUseCoinJoin)
     {

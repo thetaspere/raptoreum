@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2020-2021 The Raptoreum developers
+// Copyright (c) 2020-2021 The Theta developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,7 +7,7 @@
 #define BITCOIN_QT_BITCOINGUI_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/raptoreum-config.h>
+#include <config/theta-config.h>
 #endif
 
 #include <amount.h>
@@ -309,7 +309,7 @@ private Q_SLOTS:
     void showPeers();
     void showRepair();
 
-    /** Open external (default) editor with raptoreum.conf */
+    /** Open external (default) editor with theta.conf */
     void showConfEditor();
     /** Show folder with wallet backups in default file browser */
     void showBackups();

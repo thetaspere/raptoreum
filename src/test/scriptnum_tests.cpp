@@ -4,7 +4,7 @@
 
 #include <test/scriptnum10.h>
 #include <script/script.h>
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <boost/test/unit_test.hpp>
 #include <limits.h>

@@ -1,9 +1,9 @@
-// Copyright (c) 2022 The Raptoreum developers
+// Copyright (c) 2022 The Theta developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RTM_POWCACHE_H
-#define RTM_POWCACHE_H
+#ifndef FITA_POWCACHE_H
+#define FITA_POWCACHE_H
 
 #include <uint256.h>
 #include <sync.h>
@@ -77,4 +77,4 @@ class CPowCache : public unordered_lru_cache<uint256, uint256, std::hash<uint256
         }
 };
 
-#endif // RTM_POWCACHE_H
+#endif // FITA_POWCACHE_H

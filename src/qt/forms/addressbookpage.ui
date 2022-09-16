@@ -157,7 +157,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../raptoreum.qrc"/>
+  <include location="../theta.qrc"/>
  </resources>
  <connections/>
 </ui>

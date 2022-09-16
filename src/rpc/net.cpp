@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2019 The Dash Core developers
-// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2020-2022 The Theta developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -98,7 +98,7 @@ UniValue getpeerinfo(const JSONRPCRequest& request)
             "    \"minping\": n,              (numeric) minimum observed ping time (if any at all)\n"
             "    \"pingwait\": n,             (numeric) ping wait (if non-zero)\n"
             "    \"version\": v,              (numeric) The peer version, such as 70001\n"
-            "    \"subver\": \"/Raptoreum Core:x.x.x/\",  (string) The string version\n"
+            "    \"subver\": \"/Theta Core:x.x.x/\",  (string) The string version\n"
             "    \"inbound\": true|false,     (boolean) Inbound (true) or Outbound (false)\n"
             "    \"addnode\": true|false,     (boolean) Whether connection was due to addnode/-connect or if it was an automatic/inbound connection\n"
             "    \"smartnode\": true|false,   (boolean) Whether connection was due to smartnode connection attempt\n"
@@ -312,7 +312,7 @@ UniValue getaddednodeinfo(const JSONRPCRequest& request)
             "    \"connected\" : true|false,          (boolean) If connected\n"
             "    \"addresses\" : [                    (list of objects) Only when connected = true\n"
             "       {\n"
-            "         \"address\" : \"192.168.0.201:9999\",  (string) The raptoreum server IP and port we're connected to\n"
+            "         \"address\" : \"192.168.0.201:9999\",  (string) The theta server IP and port we're connected to\n"
             "         \"connected\" : \"outbound\"           (string) connection, inbound or outbound\n"
             "       }\n"
             "     ]\n"
@@ -440,7 +440,7 @@ UniValue getnetworkinfo(const JSONRPCRequest& request)
             "{\n"
             "  \"version\": xxxxx,                      (numeric) the server version\n"
             "  \"buildversion\": \"x.x.x.x-xxx\",         (string) the server build version including RC info or commit as relevant\n"
-            "  \"subversion\": \"/Raptoreum Core:x.x.x.x/\",   (string) the server subversion string\n"
+            "  \"subversion\": \"/Theta Core:x.x.x.x/\",   (string) the server subversion string\n"
             "  \"protocolversion\": xxxxx,              (numeric) the protocol version\n"
             "  \"localservices\": \"xxxxxxxxxxxxxxxx\", (string) the services we offer to the network\n"
             "  \"localrelay\": true|false,              (bool) true if transaction relay is requested from peers\n"

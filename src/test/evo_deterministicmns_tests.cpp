@@ -1,9 +1,9 @@
 // Copyright (c) 2018-2019 The Dash Core developers
-// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2020-2022 The Theta developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <script/interpreter.h>
 #include <script/standard.h>

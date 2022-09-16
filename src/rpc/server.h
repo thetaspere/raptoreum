@@ -136,7 +136,7 @@ public:
 };
 
 /**
- * Raptoreum RPC command dispatcher.
+ * Theta RPC command dispatcher.
  */
 class CRPCTable
 {

@@ -1,6 +1,6 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2020 The Dash Core developers
-// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2020-2022 The Theta developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -31,7 +31,7 @@ SendCoinsEntry::SendCoinsEntry(QWidget* parent, bool hideFuture) :
 
     setButtonIcons();
 
-    // normal raptoreum address field
+    // normal theta address field
     GUIUtil::setupAddressWidget(ui->payTo, this, true);
 
     GUIUtil::setFont({ui->payToLabel,
@@ -135,7 +135,7 @@ void SendCoinsEntry::futureToggleChanged() {
     bool isFuture = ui->futureCb->isChecked();
     if(isFuture) {
         char feeDisplay[18];
-        sprintf(feeDisplay, "%d RTM", getFutureFees());
+        sprintf(feeDisplay, "%d FITA", getFutureFees());
         ui->feeDisplay->setText(feeDisplay);
     }
     ui->maturityLb->setVisible(isFuture);

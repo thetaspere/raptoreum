@@ -5,7 +5,7 @@
 #include <dbwrapper.h>
 #include <uint256.h>
 #include <random.h>
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <memory>
 
