@@ -4,11 +4,18 @@ Theta Core staging tree 0.17
 |CI|master|develop|
 |-|-|-|
 
-The name Theta is derived from the Victorian term for a bird of prey and ium/eum place for a pertaining to in this case birds of prey. The name comes from the team’s extensive experience in the security field with top level skills covering all aspects of it. This is a unique strength in the crypto community and will leverage well into a successful project.
-
-Introduction
-Theta began as the fairly simple idea, introducing smart contracts which would allow on chain, trustless transfers (goodbye centralized marketplaces) on the Ravencoin codebase, however with the automation of assets and FITA (Theta).
-The project has quickly evolved, adding innovative features that not only further expand the asset layer, but also introduce features that could help other Blockchain projects. Ravencoin unfortunately suffered several serious breaches of its asset layer so that code base has been abandoned by us. We are currently working with and building on Theta code expending its capabilities significantly.
+# Coin specifications:
+&nbsp; | &nbsp;
+------ | ------
+**Coin name:** | THETA
+**Coin Ticker:** | FITA
+**Coin Symbol:** | θ
+**Initial block reward:** | 4 θ - 5000 θ
+**Average block time:** | 120 Second
+**Smartnode Payments Start Block**: | 8400
+**Algorithm:** | GhostRider (ASIC and FPGA resistance)
+**Premine:** | none
+**Block Reward:** | 70% Miners 25% Smartnode 3% Dev 1% Exchange 1 % Community Reward.
 
 Theta is now a code fork of Dash and inherits current and optionally future features such as chain locks, oracles etc. We are further expanding capabilities by adding the following features:
 A)	The deployment of a unique asset layer.
