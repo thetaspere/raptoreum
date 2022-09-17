@@ -6,7 +6,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 bin_PROGRAMS += qt/theta-qt
-EXTRA_LIBRARIES += qt/thetaqt.a
+EXTRA_LIBRARIES += qt/libthetaqt.a
 
 # theta qt core #
 QT_TS = \
