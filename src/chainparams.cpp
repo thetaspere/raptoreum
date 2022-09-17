@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2020 The Dash Core developers
-// Copyright (c) 2020-2022 The Theta developers
+// Copyright (c) 2020-2022 The Raptoreum developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -83,8 +83,8 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 22/Jan/2018 Theta is name of the game for new generation of firms";
-    const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
+    const char* pszTimestamp = "Theta fita started with 1";
+    const CScript genesisOutputScript = CScript() << ParseHex("04322ca1a8cdc5c0930872ba6012e207716e5253b7db4a202d4aa86a8ba8b5fd7e15e58f6873fd58a56d508cdf069afdf0eb08c9bdcb7c042b98e16d70b59b3") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -518,8 +518,8 @@ public:
         consensus.DIP0008Enabled = true;
         // consensus.DIP0003EnforcementHeight = 1047200;
         consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Theta: 1 day
-        consensus.nPowTargetSpacing = 2 * 60; // Theta: 2 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Raptoreum: 1 day
+        consensus.nPowTargetSpacing = 2 * 60; // Raptoreum: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nPowDGWHeight = 60;
@@ -529,12 +529,12 @@ public:
         consensus.smartnodePaymentFixedBlock = 6800;
         consensus.nFutureForkBlock = 420420;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1663412742; // January 1, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1758107142;
 
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_V17].nStartTime = 1665644400; // 1665644400; // 0ct 13, 2022 00:00:00hrs
-        consensus.vDeployments[Consensus::DEPLOYMENT_V17].nTimeout = 9999999999; // 1675206001; // Feb 01, 2023 00:00:01hrs
+        consensus.vDeployments[Consensus::DEPLOYMENT_V17].nStartTime = 1663412742; // 1665644400; // 0ct 13, 2022 00:00:00hrs
+        consensus.vDeployments[Consensus::DEPLOYMENT_V17].nTimeout = 1758107142; // 1675206001; // Feb 01, 2023 00:00:01hrs
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nThresholdStart = 3226; // 80% of 4032
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nThresholdMin = 2420; // 60% of 4032
@@ -551,40 +551,40 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x72;//r
-        pchMessageStart[1] = 0x74;//t
+        pchMessageStart[0] = 0x35;//r
+        pchMessageStart[1] = 0x89;//t
         pchMessageStart[2] = 0x6d;//m
         pchMessageStart[3] = 0x2e;//.
         nDefaultPort = 9933;
         nPruneAfterHeight = 100000;
         //FindMainNetGenesisBlock(1614369600, 0x20001fff, "main");
-        genesis = CreateGenesisBlock(1614369600, 1130, 0x20001fff, 4, 5000 * COIN);
+        genesis = CreateGenesisBlock(1663335170, 1036, 0x20001fff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xb79e5df07278b9567ada8fc655ffbfa9d3f586dc38da3dd93053686f41caeea0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x87a48bc22468acdd72ee540aab7c086a5bbcddc12b51c6ac925717a74c269453"));
+        assert(consensus.hashGenesisBlock == uint256S("0xf4c6228191209d4f070b706f785d822ae10085eb992d5dae46752727e45c39a8"));
+        assert(genesis.hashMerkleRoot == uint256S("0xb1baf4f0b5f9757275565eabdd3e3b0491004c52da22c396ba711839764b60bd"));
 
-        vSeeds.emplace_back("seed00.theta.com");
-        vSeeds.emplace_back("seed01.theta.com");
-        vSeeds.emplace_back("seed02.theta.com");
-        vSeeds.emplace_back("seed03.theta.com");
-        vSeeds.emplace_back("seed04.theta.com");
-        vSeeds.emplace_back("seed05.theta.com");
-        vSeeds.emplace_back("seed06.theta.com");
-        vSeeds.emplace_back("ger1.theta.com");
-        vSeeds.emplace_back("ny1.theta.com");
+        vSeeds.emplace_back("seed00.raptoreum.com");
+        vSeeds.emplace_back("seed01.raptoreum.com");
+        vSeeds.emplace_back("seed02.raptoreum.com");
+        vSeeds.emplace_back("seed03.raptoreum.com");
+        vSeeds.emplace_back("seed04.raptoreum.com");
+        vSeeds.emplace_back("seed05.raptoreum.com");
+        vSeeds.emplace_back("seed06.raptoreum.com");
+        vSeeds.emplace_back("ger1.raptoreum.com");
+        vSeeds.emplace_back("ny1.raptoreum.com");
 
 
-        // Theta addresses start with 'r'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,60);
-        // Theta script addresses start with '7'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
-        // Theta private keys start with '7' or 'X'
+        // Raptoreum addresses start with 'r'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
+        // Raptoreum script addresses start with '7'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        // Raptoreum private keys start with '7' or 'X'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
-        // Theta BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // Raptoreum BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
-        // Theta BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // Raptoreum BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
-        // Theta BIP44 coin type is '5'
+        // Raptoreum BIP44 coin type is '5'
         std::string strExtCoinType = gArgs.GetArg("-extcoinindex", "");
         nExtCoinType = strExtCoinType.empty() ? 200 : std::stoi(strExtCoinType);
 //        if(gArgs.GetChainName() == CBaseChainParams::MAIN) {
@@ -631,24 +631,21 @@ public:
         nPoolNewMaxParticipants = 20;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {"RWGvGpd3yJdnfh9ziyHNDEoHMJBvnZ23zK"};
+        vSporkAddresses = {""};
         nMinSporkKeys = 1;
         fBIP9CheckSmartnodesUpgraded = true;
 
         checkpointData = {
-          {  {5145, uint256S("0x64c9cc82f05f4326e49fd4b21a48494b02b12a707de67a47c7e8e1102b0f1d9b")},
-             {35000, uint256S("0xb4fb191f3ef4141557aef8aafa700d312e5499cbde4a3079faa78cf58c0c414f")},
-             {61900, uint256S("0xc146fc6244fe4d71559f4fef16a386f1fceda6e5efa3da3ca1ebe9806cc8f25c")},
-             {394273, uint256S("0dc274a28864a01a9539e60afdbc38fcdb0f000fbc52553cd31651c97557dc04")}
+          {  {0, uint256S("0xf4c6228191209d4f070b706f785d822ae10085eb992d5dae46752727e45c39a8")}
 
           }
         };
 
         chainTxData = ChainTxData{
-            1662608883,   // * UNIX timestamp of last known number of transactions (Block 0)
-            2091922,   // * total number of transactions between genesis and that timestamp
+            1663335170,   // * UNIX timestamp of last known number of transactions (Block 0)
+            0,   // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            0.06    // * estimated number of transactions per second after that timestamp
+            0.0    // * estimated number of transactions per second after that timestamp
         };
     }
 };
@@ -685,8 +682,8 @@ public:
         consensus.DIP0008Enabled = true;
         // consensus.DIP0003EnforcementHeight = 7300;
         consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Theta: 1 day
-        consensus.nPowTargetSpacing = 60; // Theta: 1 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Raptoreum: 1 day
+        consensus.nPowTargetSpacing = 60; // Raptoreum: 1 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowDGWHeight = 60;
@@ -696,12 +693,12 @@ public:
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         consensus.nFutureForkBlock = 1000;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
-        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1663412742; // January 1, 2008
+        consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1758107142; // December 31, 2008
 
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_V17].nStartTime = 1643670001; // Feb 01, 2022 00:00:01hrs
-        consensus.vDeployments[Consensus::DEPLOYMENT_V17].nTimeout = 1675206001; // Feb 01, 2023 00:00:01hrs
+        consensus.vDeployments[Consensus::DEPLOYMENT_V17].nStartTime = 1663412742; // Feb 01, 2022 00:00:01hrs
+        consensus.vDeployments[Consensus::DEPLOYMENT_V17].nTimeout = 1758107142; // Feb 01, 2023 00:00:01hrs
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nWindowSize = 100;
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nThresholdStart = 80;
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nThresholdMin = 60;
@@ -720,10 +717,10 @@ public:
         nDefaultPort = 10228;
         nPruneAfterHeight = 1000;
        // FindMainNetGenesisBlock(1645942755,  0x20001fff, "test");
-        genesis = CreateGenesisBlock(1645942755, 387, 0x20001fff, 4, 5000 * COIN);
+        genesis = CreateGenesisBlock(1663335180, 3049, 0x20001fff, 4, 5000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x99f1aeb781d780f51aee4247b23eb91d561f6fb8c9e761a9f1ebc72212b4ebf0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x87a48bc22468acdd72ee540aab7c086a5bbcddc12b51c6ac925717a74c269453"));
+        assert(consensus.hashGenesisBlock == uint256S("0xf87ea53f8d56881adc5ae856a33f1cdb1f1ad4f5a15308ca13ec9dd691050a86"));
+        assert(genesis.hashMerkleRoot == uint256S("0xb1baf4f0b5f9757275565eabdd3e3b0491004c52da22c396ba711839764b60bd"));
 
         vFixedSeeds.clear();
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -733,21 +730,21 @@ public:
         vSeeds.emplace_back("47.151.7.226");
         //vSeeds.emplace_back("62.171.153.224", true);
         //vSeeds.emplace_back("98.38.235.195", true);
-        //vSeeds.emplace_back("ger1.theta.com", true);
-        //vSeeds.emplace_back("ny1.theta.com", true);
+        //vSeeds.emplace_back("ger1.raptoreum.com", true);
+        //vSeeds.emplace_back("ny1.raptoreum.com", true);
 
-        // Testnet Theta addresses start with 'r'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,123);
-        // Testnet Theta script addresses start with '8' or '9'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
+        // Testnet Raptoreum addresses start with 'r'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
+        // Testnet Raptoreum script addresses start with '8' or '9'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Theta BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Raptoreum BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet Theta BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Raptoreum BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet Theta BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Raptoreum BIP44 coin type is '1' (All coin's testnet default)
         std::string strExtCoinType = gArgs.GetArg("-extcoinindex", "");
         nExtCoinType = strExtCoinType.empty() ? 10227 : std::stoi(strExtCoinType);
 
@@ -837,8 +834,8 @@ public:
         consensus.DIP0008Enabled = true;// DIP0008 activated immediately on devnet
        // consensus.DIP0003EnforcementHeight = 2; // DIP0003 activated immediately on devnet
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Theta: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Theta: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Raptoreum: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Raptoreum: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nPowDGWHeight = 60;
@@ -886,20 +883,20 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("thetaevo.org",  "devnet-seed.thetaevo.org"));
+        //vSeeds.push_back(CDNSSeedData("raptoreumevo.org",  "devnet-seed.raptoreumevo.org"));
 
-        // Testnet Theta addresses start with 'y'
+        // Testnet Raptoreum addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Theta script addresses start with '8' or '9'
+        // Testnet Raptoreum script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Testnet Theta BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet Raptoreum BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Testnet Theta BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet Raptoreum BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Testnet Theta BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet Raptoreum BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
@@ -976,8 +973,8 @@ public:
         consensus.DIP0003Enabled = true;
        // consensus.DIP0003EnforcementHeight = 500;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Theta: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Theta: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Raptoreum: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Raptoreum: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nPowDGWHeight = 60;
@@ -1054,18 +1051,18 @@ public:
             0
         };
 
-        // Regtest Theta addresses start with 'y'
+        // Regtest Raptoreum addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest Theta script addresses start with '8' or '9'
+        // Regtest Raptoreum script addresses start with '8' or '9'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Theta BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Raptoreum BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        // Regtest Theta BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Raptoreum BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        // Regtest Theta BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Raptoreum BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
