@@ -1,11 +1,11 @@
 /**
-Copyright (c) 2020 The Dash Core developers
+Copyright (c) 2022 The Theta Core developers
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 ---------------------------------------------------------------------
 
-This file contains color changes for the dash theme "Light".
+This file contains color changes for the theta theme "Light".
 
 NOTE: This file gets appended to the general.css while its
 getting loaded in GUIUtil::loadStyleSheet(). Thus changes made in
@@ -17,16 +17,15 @@ Loaded in GUIUtil::loadStyleSheet() in guitil.cpp.
 /* do not modify! section updated by update-css-files.py
 <colors>
 
-# Used colors in light.css for commit d1e3d76b1
+# Used colors in light.css for commit 44de8a93f2
 
 #00000000
 #555
+#008de4
 #0f75b5
 #a7a7a7
-#b7410e
 #c7c7c7
 #d2d2d2
-#d94d11
 #dcdcdc
 #e0e0e0
 #eaeaec
@@ -77,7 +76,7 @@ QComboBox,
 QPlainTextEdit,
 QLineEdit {
     background-color: #eaeaec;
-    border-color: #b7410e;
+    border-color: #008de4;
     color: #555;
 }
 
@@ -278,13 +277,13 @@ QHeaderView
 ******************************************************/
 
 QHeaderView::section { /* Table Header Sections */
-    background-color: #b7410e;
+    background-color: #008de4;
     border-color: #f2f2f4;
     color: #f2f2f4;
 }
 
 QHeaderView::section:hover { /* Table Header Sections */
-    background-color: #d94d11;
+    background-color: #0f75b5;
     color: #f2f2f4;
 }
 
@@ -338,7 +337,7 @@ QProgressBar {
 }
 
 QProgressBar::chunk {
-    background-color: #b7410e;
+    background-color: #008de4;
 }
 
 /******************************************************
@@ -354,16 +353,16 @@ QPushButton
 ******************************************************/
 
 QPushButton {
-    background-color: #b7410e;
+    background-color: #008de4;
     color: #f2f2f4;
 }
 
 QPushButton:hover {
-    background-color: #d94d11;
+    background-color: #0f75b5;
 }
 
 QPushButton:pressed {
-    background-color: #d94d11;
+    background-color: #008de4;
 }
 
 QPushButton:disabled {
@@ -465,7 +464,7 @@ QPushButton - Special case, tabbar replacement buttons
 /* Sign/Verify dialog buttons */
 #btnSignMessage,
 #btnVerifyMessage {
-    border-color: #b7410e;
+    border-color: #008de4;
     color: #a7a7a7;
 }
 
@@ -575,10 +574,10 @@ QSlider
 ******************************************************/
 
 QSlider::handle:horizontal {
-	background-color: #b7410e;
+	background-color: #008de4;
 }
 QSlider::handle:horizontal:hover {
-	background-color: #d94d11;
+	background-color: #0f75b5;
 }
 QSlider::sub-page:horizontal {
 	background-color: #c7c7c7;
@@ -648,7 +647,7 @@ QToolBar / QToolButton
 ******************************************************/
 
 QToolBar {
-    background-color: #b7410e;
+    background-color: #008de4;
 }
 
 QToolBar > QToolButton {
@@ -657,7 +656,7 @@ QToolBar > QToolButton {
 }
 
 QToolBar > QToolButton:hover:!checked {
-    background-color: #d94d11;
+    background-color: #0f75b5;
     color: #dcdcdc;
 }
 
@@ -805,6 +804,14 @@ EditAddressDialog
 /***** No light.css specific coloring here yet *****/
 
 /******************************************************
+GovernanceList
+******************************************************/
+
+GovernanceList QTableView {
+    color: #555;
+}
+
+/******************************************************
 HelpMessageDialog
 ******************************************************/
 
@@ -814,7 +821,7 @@ HelpMessageDialog QWidget#scrollAreaWidgetContents {
 }
 
 /******************************************************
-SmartnodeList
+MasternodeList
 ******************************************************/
 
 /***** No light.css specific coloring here yet *****/
@@ -883,6 +890,10 @@ QWidget#RPCConsole { /* RPC Console Dialog Box */
 
 RPCConsole QTableView {
     color: #555;
+}
+
+RPCConsole QWidget#detailWidget {
+    background-color: #f2f2f4;
 }
 
 #rpcAutoCompleter {

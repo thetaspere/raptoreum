@@ -1,11 +1,11 @@
 /**
-Copyright (c) 2020 The Dash Core developers
+Copyright (c) 2020 The Theta Core developers
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 ---------------------------------------------------------------------
 
-This file contains all changes for the dash theme "Traditional".
+This file contains all changes for the theta theme "Traditional".
 
 NOTE: This file gets not appended to the general.css. The Traditional
 theme is a standalone theme which just fixes some bugs in the OS default
@@ -17,16 +17,15 @@ Loaded in GUIUtil::loadStyleSheet() in guitil.cpp.
 /* do not modify! section updated by update-css-files.py
 <colors>
 
-# Used colors in traditional.css for commit d1e3d76b1
+# Used colors in traditional.css for commit 44de8a93f2
 
 #00000000
+#222222
 #333
 #fff
 #008de4
 #047ac2
-#222222
 #a84832
-#c79304
 #ccfafafa
 
 </colors>
@@ -38,7 +37,7 @@ QToolBar / QToolButton
 
 QToolBar QLabel#lblToolbarLogo {
     padding: 12px;
-    image: url(':/images/theta_logo_toolbar');
+    image: url(':/images/dash_logo_toolbar_blue');
     height: 2.5em;
 }
 

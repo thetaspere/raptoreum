@@ -1,11 +1,11 @@
 /**
-Copyright (c) 2020 The Dash Core developers
+Copyright (c) 2022 The Theta Core developers
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 ---------------------------------------------------------------------
 
-This file contains color changes for the dash theme "Dark".
+This file contains color changes for the theta theme "Dark".
 
 NOTE: This file gets appended to the general.css while its
 getting loaded in GUIUtil::loadStyleSheet(). Thus changes made in
@@ -17,23 +17,22 @@ Loaded in GUIUtil::loadStyleSheet() in guitil.cpp.
 /* do not modify! section updated by update-css-files.py
 <colors>
 
-# Used colors in dark.css for commit d1e3d76b1
+# Used colors in dark.css for commit 44de8a93f2
 
 #00000000
-#222
 #333
-#303030
+#00599a
+#27507a
+#2d2d2e
 #323233
 #363637
 #39393b
 #4a4a4b
 #585858
 #818181
-#8f330b
-#909090
-#b7410e
 #c7c7c7
 #f6f6f6
+#cc323232
 
 </colors>
 */
@@ -78,8 +77,8 @@ QAbstractSpinBox,
 QComboBox,
 QPlainTextEdit,
 QLineEdit {
-    background-color: #303030;
-    border-color: #b7410e;
+    background-color: #2d2d2e;
+    border-color: #00599a;
     color: #c7c7c7;
 }
 
@@ -88,8 +87,8 @@ QAbstractSpinBox:hover:!focus,
 QComboBox:hover:!focus,
 QPlainTextEdit:hover:!focus,
 QLineEdit:hover:!focus {
-    background-color: #303030;
-    border-color: #8f330b;
+    background-color: #2d2d2e;
+    border-color: #27507a;
 }
 
 
@@ -100,7 +99,7 @@ QComboBox:focus,
 QPlainTextEdit:focus,
 QLineEdit:focus {
     background-color: #39393b;
-    border-color: #b7410e;
+    border-color: #27507a;
 }
 
 BitcoinAmountField:disabled,
@@ -153,7 +152,7 @@ QCalendarWidget,
 #qt_calendar_nextmonth,
 #qt_calendar_monthbutton,
 #qt_calendar_yearbutton {
-    background-color: #303030;
+    background-color: #2d2d2e;
 }
 
 #qt_calendar_calendarview,
@@ -281,12 +280,12 @@ QHeaderView
 ******************************************************/
 
 QHeaderView::section { /* Table Header Sections */
-    background-color: #b7410e;
+    background-color: #00599a;
     color: #c7c7c7;
 }
 
 QHeaderView::section:hover { /* Table Header Sections */
-    background-color: #8f330b;
+    background-color: #27507a;
     color: #c7c7c7;
 }
 
@@ -331,7 +330,7 @@ QMenuBar {
     border-color: #4a4a4b;
 }
 
-QMenuBar::item {
+QMenu::item {
     color: #c7c7c7;
 }
 
@@ -350,15 +349,15 @@ QProgressBar {
 }
 
 QProgressBar::chunk {
-    background-color: #b7410e;
+    background-color: #00599a;
 }
 
 /******************************************************
 QProgressDialog
 ******************************************************/
 
-QProgressDialog {
-    background-color: #222;
+.QProgressDialog {
+    background-color: #4a4a4b;
     color: #c7c7c7;
 }
 
@@ -367,12 +366,12 @@ QPushButton
 ******************************************************/
 
 QPushButton {
-    background-color: #b7410e;
+    background-color: #00599a;
     color: #c7c7c7;
 }
 
 QPushButton:hover {
-    background-color: #8f330b;
+    background-color: #27507a;
 }
 
 QPushButton:focus {
@@ -381,7 +380,7 @@ QPushButton:focus {
 }
 
 QPushButton:pressed {
-    background-color: #b7410e;
+    background-color: #00599a;
 }
 
 QPushButton:disabled {
@@ -425,7 +424,7 @@ QWidget#ReceiveCoinsDialog .QFrame#frame QPushButton#showRequestButton:hover,
 QDialog#SignVerifyMessageDialog QPushButton#clearButton_SM:hover,
 QDialog#SignVerifyMessageDialog QPushButton#clearButton_VM:hover {
     background-color: #818181;
-    color: #303030;
+    color: #2d2d2e;
 }
 
 QWidget#AddressBookPage QPushButton#newAddress:pressed,
@@ -483,7 +482,7 @@ QPushButton - Special case, tabbar replacement buttons
 /* Sign/Verify dialog buttons */
 #btnSignMessage,
 #btnVerifyMessage {
-    border-color: #b7410e;
+    border-color: #00599a;
     color: #818181;
 }
 
@@ -523,7 +522,7 @@ QPushButton - Special case, tabbar replacement buttons
 /* Sign/Verify dialog buttons */
 #btnSignMessage:hover:!checked,
 #btnVerifyMessage:hover:!checked {
-    border-color: #8f330b;
+    border-color: #00599a;
     color: #c7c7c7;
 }
 
@@ -592,10 +591,10 @@ QSlider
 ******************************************************/
 
 QSlider::handle:horizontal {
-	background-color: #b7410e;
+	background-color: #00599a;
 }
 QSlider::handle:horizontal:hover {
-	background-color: #8f330b;
+	background-color: #27507a;
 }
 QSlider::sub-page:horizontal {
 	background-color: #c7c7c7;
@@ -618,12 +617,12 @@ QTableView
 ******************************************************/
 
 .QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
-    background-color: #303030;
+    background-color: #2d2d2e;
     border-color: #4a4a4b;
 }
 
 QTableView::item { /* Table Item */
-    background-color: #303030;
+    background-color: #2d2d2e;
     border-color: #4a4a4b;
 }
 
@@ -653,7 +652,7 @@ QTextEdit
 ******************************************************/
 
 QTextEdit {
-    background-color: #303030;
+    background-color: #2d2d2e;
     border-color: #4a4a4b;
     color: #c7c7c7;
 }
@@ -663,7 +662,7 @@ QToolBar / QToolButton
 ******************************************************/
 
 QToolBar {
-    background-color: #b7410e;
+    background-color: #00599a;
 }
 
 QToolBar > QToolButton {
@@ -672,7 +671,7 @@ QToolBar > QToolButton {
 }
 
 QToolBar > QToolButton:hover:!checked {
-    background-color: #8f330b;
+    background-color: #27507a;
     color: #c7c7c7;
 }
 
@@ -690,7 +689,7 @@ QToolTip
 ******************************************************/
 
 QToolTip {
-    background-color: #303030;
+    background-color: #2d2d2e;
     border-color: #4a4a4b;
     color: #c7c7c7;
 }
@@ -700,8 +699,8 @@ QTreeWidget
 ******************************************************/
 
 QTreeWidget {
-    alternate-background-color: #303030;
-    background-color: #303030;
+    alternate-background-color: #2d2d2e;
+    background-color: #2d2d2e;
     border-color: #4a4a4b;
 }
 QTreeWidget::branch::closed:has-children {
@@ -820,16 +819,24 @@ EditAddressDialog
 /***** No dark.css specific coloring here yet *****/
 
 /******************************************************
+GovernanceList
+******************************************************/
+
+GovernanceList QTableView {
+    color: #c7c7c7;
+}
+
+/******************************************************
 HelpMessageDialog
 ******************************************************/
 
 HelpMessageDialog QWidget#scrollAreaWidgetContents {
-    background-color: #303030;
+    background-color: #2d2d2e;
     border-color: #4a4a4b;
 }
 
 /******************************************************
-SmartnodeList
+MasternodeList
 ******************************************************/
 
 /***** No dark.css specific coloring here yet *****/
@@ -839,12 +846,12 @@ ModalOverlay
 ******************************************************/
 
 QWidget#bgWidget { /* The frame overlaying the overview-page */
-    background-color: #909090;
+    background-color: #cc323232;
     color: #585858;
 }
 
 QWidget#contentWidget { /* The actual content with the text/buttons/etc... */
-    background-color: #303030;
+    background-color: #4a4a4b;
     border-color: #585858;
 }
 
@@ -899,6 +906,10 @@ QWidget#RPCConsole { /* RPC Console Dialog Box */
 
 RPCConsole QTableView {
     color: #c7c7c7;
+}
+
+RPCConsole QWidget#detailWidget {
+    background-color: #323233;
 }
 
 #rpcAutoCompleter {
