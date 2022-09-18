@@ -45,8 +45,8 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Theta"
-#define QAPP_ORG_DOMAIN "theta.com"
+#define QAPP_ORG_NAME "Theta Core"
+#define QAPP_ORG_DOMAIN "thetaspere.com"
 #define QAPP_APP_NAME_DEFAULT "Theta-Qt"
 #define QAPP_APP_NAME_TESTNET "Theta-Qt-testnet"
 #define QAPP_APP_NAME_DEVNET "Theta-Qt-%s"
