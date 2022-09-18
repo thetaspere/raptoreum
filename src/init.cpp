@@ -647,8 +647,8 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/Raptor3um/theta>";
-    const std::string URL_WEBSITE = "<https://theta.com>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/thetaspere/theta>";
+    const std::string URL_WEBSITE = "<https://thetaspere.com>";
 
     return CopyrightHolders(_("Copyright (C)"), 2014, COPYRIGHT_YEAR) + "\n" +
            "\n" +
