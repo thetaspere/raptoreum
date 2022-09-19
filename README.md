@@ -1,5 +1,6 @@
 Theta Core staging tree 0.17
 ===========================
+Theta is good for nothing unless you know the value of it by experience.
 
 |CI|master|develop|
 |-|-|-|
