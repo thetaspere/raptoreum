@@ -5,7 +5,7 @@
 #ifndef BITCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
 #define BITCOIN_WALLET_TEST_WALLET_TEST_FIXTURE_H
 
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <wallet/wallet.h>
 

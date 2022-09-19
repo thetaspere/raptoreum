@@ -1,5 +1,5 @@
 ---
-name: Raptoreum Build
+name: Theta Build
 on:
   push:
     branches:
@@ -11,9 +11,9 @@ on:
     branches:
       - develop
 env:
-  COIN_NAME: raptoreum
-  BUILD_DIR: raptoreum-build
-  COMPRESS_DIR: raptoreum-compress
+  COIN_NAME: theta
+  BUILD_DIR: theta-build
+  COMPRESS_DIR: theta-compress
   TEST_LOG_ARTIFACT_DIR: test-logs
 jobs:
   checking-build-version:
@@ -96,7 +96,7 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{raptoreum-cli,raptoreum-tx,raptoreumd,qt/raptoreum-qt} $BUILD_DIR/
+          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
@@ -155,7 +155,7 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{raptoreum-cli,raptoreum-tx,raptoreumd,qt/raptoreum-qt} $BUILD_DIR/
+          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
@@ -213,7 +213,7 @@ jobs:
         run: |
           make -j8
           mkdir -p $BUILD_DIR
-          mv src/{raptoreum-cli,raptoreum-tx,raptoreumd,qt/raptoreum-qt} $BUILD_DIR/
+          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
@@ -245,10 +245,10 @@ jobs:
         run: |
           make deploy
           mkdir -p macos-dmg
-          mv Raptoreum-Qt.dmg macos-dmg/
+          mv Theta-Qt.dmg macos-dmg/
           cd macos-dmg
-          echo "sha256: `shasum Raptoreum-Qt.dmg`" >> checksums.txt
-          echo "openssl-sha256: `openssl sha256 Raptoreum-Qt.dmg`" >> checksums.txt
+          echo "sha256: `shasum Theta-Qt.dmg`" >> checksums.txt
+          echo "openssl-sha256: `openssl sha256 Theta-Qt.dmg`" >> checksums.txt
           cd ..
       - name: Upload dmg file
         uses: actions/upload-artifact@v3
@@ -286,7 +286,7 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{raptoreum-cli,raptoreum-tx,raptoreumd,qt/raptoreum-qt} $BUILD_DIR/
+          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
       - name: generate checksum and compress binary
         run: |
           echo "buildng $BUILD_VERSION version"
@@ -344,7 +344,7 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{raptoreum-cli,raptoreum-tx,raptoreumd,qt/raptoreum-qt} $BUILD_DIR/
+          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
       - name: generate checksum and compress binary
         run: |
           echo "buildng $BUILD_VERSION version"
@@ -405,7 +405,7 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{raptoreum-cli.exe,raptoreum-tx.exe,raptoreumd.exe,qt/raptoreum-qt.exe} $BUILD_DIR/
+          mv src/{theta-cli.exe,theta-tx.exe,thetad.exe,qt/theta-qt.exe} $BUILD_DIR/
           strip $BUILD_DIR/*
       - name: generate checksum and compress binary
         run: |

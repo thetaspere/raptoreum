@@ -1,5 +1,5 @@
-Building Raptoreum
+Building Theta
 =============
 
 See doc/build-*.md for instructions on building the various
-elements of the Raptoreum Core reference implementation of Raptoreum.
+elements of the Theta Core reference implementation of Theta.

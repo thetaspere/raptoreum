@@ -6,9 +6,9 @@ set -eu
 uname_S=$(uname -s 2>/dev/null || echo not)
 
 if [ "$uname_S" = "Darwin" ]; then
-    PARAMS_DIR="$HOME/Library/Application Support/RaptoreumParams"
+    PARAMS_DIR="$HOME/Library/Application Support/ThetaParams"
 else
-    PARAMS_DIR="$HOME/.raptoreum-params"
+    PARAMS_DIR="$HOME/.theta-params"
 fi
 
 # Commented out because these are unused; see below.
@@ -17,7 +17,7 @@ fi
 SAPLING_SPEND_NAME='sapling-spend.params'
 SAPLING_OUTPUT_NAME='sapling-output.params'
 SAPLING_SPROUT_GROTH16_NAME='sprout-groth16.params'
-DOWNLOAD_URL="https://github.com/Raptor3um/raptoreum/releases/tag/1.2.15.3"
+DOWNLOAD_URL="https://github.com/thetaspere/theta/releases/tag/1.2.15.3"
 #IPFS_HASH="/ipfs/QmXRHVGLQBiKwvNq7c2vPxAKz1zRVmMYbmt7G5TQss7tY7"
 
 SHA256CMD="$(command -v sha256sum || echo shasum)"
@@ -27,15 +27,15 @@ WGETCMD="$(command -v wget || echo '')"
 IPFSCMD="$(command -v ipfs || echo '')"
 CURLCMD="$(command -v curl || echo '')"
 
-# fetch methods can be disabled with RTM_DISABLE_SOMETHING=1
-RTM_DISABLE_WGET="${RTM_DISABLE_WGET:-}"
-#RTM_DISABLE_IPFS="${RTM_DISABLE_IPFS:-}"
-RTM_DISABLE_CURL="${RTM_DISABLE_CURL:-}"
+# fetch methods can be disabled with FITA_DISABLE_SOMETHING=1
+FITA_DISABLE_WGET="${FITA_DISABLE_WGET:-}"
+#FITA_DISABLE_IPFS="${FITA_DISABLE_IPFS:-}"
+FITA_DISABLE_CURL="${FITA_DISABLE_CURL:-}"
 
 LOCKFILE=/tmp/fetch_params.lock
 
 fetch_wget() {
-    if [ -z "$WGETCMD" ] || ! [ -z "$RTM_DISABLE_WGET" ]; then
+    if [ -z "$WGETCMD" ] || ! [ -z "$FITA_DISABLE_WGET" ]; then
         return 1
     fi
 
@@ -53,7 +53,7 @@ EOF
 }
 
 #fetch_ipfs() {
-#    if [ -z "$IPFSCMD" ] || ! [ -z "$RTM_DISABLE_IPFS" ]; then
+#    if [ -z "$IPFSCMD" ] || ! [ -z "$FITA_DISABLE_IPFS" ]; then
 #        return 1
 #    fi
 
@@ -66,7 +66,7 @@ EOF
 #}
 
 fetch_curl() {
-    if [ -z "$CURLCMD" ] || ! [ -z "$RTM_DISABLE_CURL" ]; then
+    if [ -z "$CURLCMD" ] || ! [ -z "$FITA_DISABLE_CURL" ]; then
         return 1
     fi
 
@@ -85,7 +85,7 @@ EOF
 fetch_failure() {
     cat >&2 <<EOF
 
-Failed to fetch the Raptoreum parameters!
+Failed to fetch the Theta parameters!
 Try installing one of the following programs and make sure you're online:
 
 # * ipfs
@@ -176,9 +176,9 @@ main() {
     || exit_locked_error
 
     cat <<EOF
-RTM - fetch-params.sh
+FITA - fetch-params.sh
 
-This script will fetch the Raptoreum SNARK parameters and verify their
+This script will fetch the Theta SNARK parameters and verify their
 integrity with sha256sum.
 
 If they already exist locally, it will exit now and do nothing else.
@@ -190,7 +190,7 @@ EOF
         mkdir -p "$PARAMS_DIR"
         README_PATH="$PARAMS_DIR/README"
         cat >> "$README_PATH" <<EOF
-This directory stores common Raptoreum SNARK parameters. Note that it is
+This directory stores common Theta SNARK parameters. Note that it is
 distinct from the daemon's -datadir argument because the parameters are
 large and may be shared across multiple distinct -datadir's such as when
 setting up test networks.

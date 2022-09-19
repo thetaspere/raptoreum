@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2021 The Dash Core developers
-// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2020-2022 The Theta developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -316,8 +316,8 @@ void CCoinJoin::InitStandardDenominations()
         is convertible to another.
 
         For example:
-        100RTM+1000 == (10RTM+100)*10
-        10RM+10000 == (1RTM+1000)*10
+        100FITA+1000 == (10FITA+100)*10
+        10RM+10000 == (1FITA+1000)*10
     */
     /* Disabled
     vecStandardDenominations.push_back( (100      * COIN)+100000 );

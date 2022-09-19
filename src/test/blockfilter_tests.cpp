@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <test/data/blockfilters.json.h>
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <blockfilter.h>
 #include <core_io.h>

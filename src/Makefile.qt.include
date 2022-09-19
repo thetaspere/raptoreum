@@ -1,35 +1,36 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Copyright (c) 2014-2018 The Dash Core developers
-# Copyright (c) 2020-2022 The Raptoreum developers
+# Copyright (c) 2020-2022 The Theta developers
+# Copyright (c) 2022 The Thetaspere developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/raptoreum-qt
-EXTRA_LIBRARIES += qt/libraptoreumqt.a
+bin_PROGRAMS += qt/theta-qt
+EXTRA_LIBRARIES += qt/libthetaqt.a
 
-# raptoreum qt core #
+# theta qt core #
 QT_TS = \
-  qt/locale/raptoreum_ar.ts \
-  qt/locale/raptoreum_bg.ts \
-  qt/locale/raptoreum_de.ts \
-  qt/locale/raptoreum_en.ts \
-  qt/locale/raptoreum_es.ts \
-  qt/locale/raptoreum_fi.ts \
-  qt/locale/raptoreum_fr.ts \
-  qt/locale/raptoreum_it.ts \
-  qt/locale/raptoreum_ja.ts \
-  qt/locale/raptoreum_ko.ts \
-  qt/locale/raptoreum_nl.ts \
-  qt/locale/raptoreum_pl.ts \
-  qt/locale/raptoreum_pt.ts \
-  qt/locale/raptoreum_ro.ts \
-  qt/locale/raptoreum_ru.ts \
-  qt/locale/raptoreum_sk.ts \
-  qt/locale/raptoreum_th.ts \
-  qt/locale/raptoreum_tr.ts \
-  qt/locale/raptoreum_vi.ts \
-  qt/locale/raptoreum_zh_CN.ts \
-  qt/locale/raptoreum_zh_TW.ts
+  qt/locale/theta_ar.ts \
+  qt/locale/theta_bg.ts \
+  qt/locale/theta_de.ts \
+  qt/locale/theta_en.ts \
+  qt/locale/theta_es.ts \
+  qt/locale/theta_fi.ts \
+  qt/locale/theta_fr.ts \
+  qt/locale/theta_it.ts \
+  qt/locale/theta_ja.ts \
+  qt/locale/theta_ko.ts \
+  qt/locale/theta_nl.ts \
+  qt/locale/theta_pl.ts \
+  qt/locale/theta_pt.ts \
+  qt/locale/theta_ro.ts \
+  qt/locale/theta_ru.ts \
+  qt/locale/theta_sk.ts \
+  qt/locale/theta_th.ts \
+  qt/locale/theta_tr.ts \
+  qt/locale/theta_vi.ts \
+  qt/locale/theta_zh_CN.ts \
+  qt/locale/theta_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -110,17 +111,17 @@ BITCOIN_MM = \
   qt/macos_appnap.mm
 
 QT_MOC = \
-  qt/raptoreum.moc \
+  qt/theta.moc \
   qt/bitcoinamountfield.moc \
   qt/callback.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_raptoreum.cpp
-QT_QRC = qt/raptoreum.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_raptoreum_locale.cpp
-QT_QRC_LOCALE = qt/raptoreum_locale.qrc
+QT_QRC_CPP = qt/qrc_theta.cpp
+QT_QRC = qt/theta.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_theta_locale.cpp
+QT_QRC_LOCALE = qt/theta_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -223,9 +224,9 @@ RES_ICONS = \
   qt/res/icons/lock_closed.png \
   qt/res/icons/lock_open.png \
   qt/res/icons/quit.png \
-  qt/res/icons/raptoreum.ico \
-  qt/res/icons/raptoreum.png \
-  qt/res/icons/raptoreum_testnet.ico \
+  qt/res/icons/theta.ico \
+  qt/res/icons/theta.png \
+  qt/res/icons/theta_testnet.ico \
   qt/res/icons/receive.png \
   qt/res/icons/remove.png \
   qt/res/icons/send.png \
@@ -340,8 +341,8 @@ RES_IMAGES = \
   qt/res/images/checkbox_partly_checked_light.png \
   qt/res/images/checkbox_partly_checked_hover_light.png \
   qt/res/images/checkbox_partly_checked_disabled_light.png \
-  qt/res/images/raptoreum_logo_toolbar.png \
-  qt/res/images/raptoreum_logo_toolbar_blue.png \
+  qt/res/images/theta_logo_toolbar.png \
+  qt/res/images/theta_logo_toolbar_blue.png \
   qt/res/images/radio_normal_dark.png \
   qt/res/images/radio_normal_hover_dark.png \
   qt/res/images/radio_checked_dark.png \
@@ -384,19 +385,19 @@ RES_FONTS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/raptoreum-qt-res.rc
+BITCOIN_RC = qt/res/theta-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -DQT_NO_KEYWORDS
 
-qt_libraptoreumqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+qt_libthetaqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_libraptoreumqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-qt_libraptoreumqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
+qt_libthetamqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libthetaqt_a_OBJCXXFLAGS = $(AM_OBJCXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_libraptoreumqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+qt_libthetaqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_FONTS) $(RES_MOVIES)
 
-nodist_qt_libraptoreumqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+nodist_qt_libthetaqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
 
 # forms/foo.h -> forms/ui_foo.h
@@ -405,71 +406,71 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libraptoreumqt_a_OBJECTS) $(qt_raptoreum_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libthetaqt_a_OBJECTS) $(qt_theta_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# raptoreum-qt binary #
-qt_raptoreum_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# theta-qt binary #
+qt_theta_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_raptoreum_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_theta_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_raptoreum_qt_SOURCES = qt/raptoreum.cpp
+qt_theta_qt_SOURCES = qt/theta.cpp
 if TARGET_DARWIN
-  qt_raptoreum_qt_SOURCES += $(BITCOIN_MM)
+  qt_theta_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_raptoreum_qt_SOURCES += $(BITCOIN_RC)
+  qt_theta_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_raptoreum_qt_LDADD = qt/libraptoreumqt.a $(LIBBITCOIN_SERVER)
+qt_theta_qt_LDADD = qt/libthetaqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_raptoreum_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+qt_theta_qt_LDADD += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_raptoreum_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_theta_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_raptoreum_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_theta_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BACKTRACE_LIB) $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
-qt_raptoreum_qt_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_raptoreum_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
+qt_theta_qt_LDFLAGS = $(LDFLAGS_WRAP_EXCEPTIONS) $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_theta_qt_LIBTOOLFLAGS = $(AM_LIBTOOLFLAGS) --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/raptoreumstrings.cpp: FORCE
+$(srcdir)/qt/thetastrings.cpp: FORCE
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $(libdash_server_a_SOURCES) $(libdash_wallet_a_SOURCES) $(libdash_common_a_SOURCES) $(libdash_zmq_a_SOURCES) $(libdash_consensus_a_SOURCES) $(libdash_util_a_SOURCES)
 
-translate: $(srcdir)/qt/raptoreumstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/raptoreum.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/thetastrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/theta.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -I$(srcdir) -locations relative -no-obsolete -ts $(srcdir)/qt/locale/raptoreum_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -I$(srcdir) -locations relative -no-obsolete -ts $(srcdir)/qt/locale/theta_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name raptoreum_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name theta_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_FONTS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name raptoreum $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name theta $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libraptoreumqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_raptoreum_locale.qrc qt/res/css/colors/*
+CLEAN_QT = $(nodist_qt_libthetaqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_theta_locale.qrc qt/res/css/colors/*
 
 CLEANFILES += $(CLEAN_QT)
 
-raptoreum_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libraptoreumqt_a_OBJECTS) $(qt_raptoreum_qt_OBJECTS) qt/raptoreum-qt$(EXEEXT) $(LIBBITCOINQT)
+theta_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libthetaqt_a_OBJECTS) $(qt_theta_qt_OBJECTS) qt/theta-qt$(EXEEXT) $(LIBBITCOINQT)
 
-raptoreum_qt : qt/raptoreum-qt$(EXEEXT)
+theta_qt : qt/theta-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

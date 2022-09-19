@@ -1,0 +1,25 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ar">locale/theta_ar.qm</file>
+        <file alias="bg">locale/theta_bg.qm</file>
+        <file alias="de">locale/theta_de.qm</file>
+        <file alias="en">locale/theta_en.qm</file>
+        <file alias="es">locale/theta_es.qm</file>
+        <file alias="fi">locale/theta_fi.qm</file>
+        <file alias="fr">locale/theta_fr.qm</file>
+        <file alias="it">locale/theta_it.qm</file>
+        <file alias="ja">locale/theta_ja.qm</file>
+        <file alias="ko">locale/theta_ko.qm</file>
+        <file alias="nl">locale/theta_nl.qm</file>
+        <file alias="pl">locale/theta_pl.qm</file>
+        <file alias="pt">locale/theta_pt.qm</file>
+        <file alias="ro">locale/theta_ro.qm</file>
+        <file alias="ru">locale/theta_ru.qm</file>
+        <file alias="sk">locale/theta_sk.qm</file>
+        <file alias="th">locale/theta_th.qm</file>
+        <file alias="tr">locale/theta_tr.qm</file>
+        <file alias="vi">locale/theta_vi.qm</file>
+        <file alias="zh_CN">locale/theta_zh_CN.qm</file>
+        <file alias="zh_TW">locale/theta_zh_TW.qm</file>
+    </qresource>
+</RCC>

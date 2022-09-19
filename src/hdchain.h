@@ -1,8 +1,8 @@
 // Copyright (c) 2014-2019 The Dash Core developers
-// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2020-2022 The Theta developers
 // Distributed under the MIT software license, see the accompanying
-#ifndef RAPTOREUM_HDCHAIN_H
-#define RAPTOREUM_HDCHAIN_H
+#ifndef THETA_HDCHAIN_H
+#define THETA_HDCHAIN_H
 
 #include <key.h>
 #include <sync.h>
@@ -148,4 +148,4 @@ public:
     std::string GetKeyPath() const;
 };
 
-#endif // RAPTOREUM_HDCHAIN_H
+#endif // THETA_HDCHAIN_H

@@ -1,39 +1,39 @@
-Raptoreum Core
+Theta Core
 ==========
 
-This is the official reference wallet for Raptoreum digital currency and comprises the backbone of the Raptoreum peer-to-peer network. You can [download Raptoreum Core](https://www.raptoreum.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Theta digital currency and comprises the backbone of the Theta peer-to-peer network. You can [download Theta Core](https://www.theta.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Raptoreum on your native platform.
+The following are some helpful notes on how to run Theta on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/raptoreum-qt` (GUI) or
-- `bin/raptoreumd` (headless)
+- `bin/theta-qt` (GUI) or
+- `bin/thetad` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run raptoreum-qt.exe.
+Unpack the files into a directory, and then run theta-qt.exe.
 
 ### OS X
 
-Drag Raptoreum-Qt to your applications folder, and then run Raptoreum-Qt.
+Drag Theta-Qt to your applications folder, and then run Theta-Qt.
 
 ### Need Help?
 
-* See the [Raptoreum documentation](https://docs.raptoreum.org)
+* See the [Theta documentation](https://docs.theta.org)
 for help and more information.
-* See the [Raptoreum Developer Documentation](https://raptoreum-docs.github.io/) 
+* See the [Theta Developer Documentation](https://theta-docs.github.io/) 
 for technical specifications and implementation details.
-* Ask for help on [Raptoreum Nation Discord](http://raptoreumchat.org)
-* Ask for help on the [Raptoreum Forum](https://raptoreum.org/forum)
+* Ask for help on [Theta Nation Discord](http://thetachat.org)
+* Ask for help on the [Theta Forum](https://theta.org/forum)
 
 Building
 ---------------------
-The following are developer notes on how to build Raptoreum Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Theta Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -43,7 +43,7 @@ The following are developer notes on how to build Raptoreum Core on your native 
 
 Development
 ---------------------
-The Raptoreum Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Theta Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
@@ -59,8 +59,8 @@ The Raptoreum Core repo's [root README](/README.md) contains relevant informatio
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Raptoreum Forum](https://raptoreum.org/forum), in the Development & Technical Discussion board.
-* Discuss on [Raptoreum Nation Discord](http://raptoreumchat.org)
+* Discuss on the [Theta Forum](https://theta.org/forum), in the Development & Technical Discussion board.
+* Discuss on [Theta Nation Discord](http://thetachat.org)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

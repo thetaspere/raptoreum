@@ -6,7 +6,7 @@
 #include <script/interpreter.h>
 
 #include <test/lcg.h>
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <boost/test/unit_test.hpp>
 

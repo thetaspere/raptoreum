@@ -5,7 +5,7 @@
 #include <random.h>
 #include <scheduler.h>
 
-#include <test/test_raptoreum.h>
+#include <test/test_theta.h>
 
 #include <boost/thread.hpp>
 #include <boost/test/unit_test.hpp>
