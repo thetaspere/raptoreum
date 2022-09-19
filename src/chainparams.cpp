@@ -541,10 +541,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nFalloffCoeff = 5; // this corresponds to 10 periods
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000c2a6d13d4138"); // 0
+        consensus.nMinimumChainWork = uint256S("0x0"); // 0
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x40e5b20023ae263fa2e62d8c6c7111aab7d2743851045a226525c6e32492c227"); // 0
+        consensus.defaultAssumeValid = uint256S("0x0"); // 0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -563,15 +563,10 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0xf4c6228191209d4f070b706f785d822ae10085eb992d5dae46752727e45c39a8"));
         assert(genesis.hashMerkleRoot == uint256S("0xb1baf4f0b5f9757275565eabdd3e3b0491004c52da22c396ba711839764b60bd"));
 
-        vSeeds.emplace_back("seed00.raptoreum.com");
-        vSeeds.emplace_back("seed01.raptoreum.com");
-        vSeeds.emplace_back("seed02.raptoreum.com");
-        vSeeds.emplace_back("seed03.raptoreum.com");
-        vSeeds.emplace_back("seed04.raptoreum.com");
-        vSeeds.emplace_back("seed05.raptoreum.com");
-        vSeeds.emplace_back("seed06.raptoreum.com");
-        vSeeds.emplace_back("ger1.raptoreum.com");
-        vSeeds.emplace_back("ny1.raptoreum.com");
+        vSeeds.emplace_back("peer1.thetaspere.com");
+        vSeeds.emplace_back("peer2.thetaspere.com");
+        vSeeds.emplace_back("peer3.thetaspere.com");
+        vSeeds.emplace_back("peer4.thetaspere.com");
 
 
         // Raptoreum addresses start with 'r'
@@ -631,7 +626,7 @@ public:
         nPoolNewMaxParticipants = 20;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {""};
+        vSporkAddresses = {"15FeGQhHpNfhFo8jiKAFKKsbXTSzFGFpof"};
         nMinSporkKeys = 1;
         fBIP9CheckSmartnodesUpgraded = true;
 
