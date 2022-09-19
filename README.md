@@ -13,7 +13,7 @@ Theta is good for nothing unless you know the value of it by experience.
 **Coin Symbol:** | θ
 **Initial block reward:** | 4 θ - 5000 θ
 **Average block time:** | 120 Second
-**Smartnode Payments Start Block**: | 8400
+**Smartnode Payments Start Block**: | 5761
 **Algorithm:** | GhostRider (ASIC and FPGA resistance)
 **Premine:** | none
 **Block Reward:** | 70% Miners 25% Smartnode 3% Dev 1% Exchange 1 % Community Reward.
