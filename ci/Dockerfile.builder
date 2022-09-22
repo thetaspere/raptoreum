@@ -18,7 +18,7 @@ RUN pip3 install jinja2
 RUN pip3 install flake8
 
 # theta_hash
-RUN git clone https://github.com/theta/theta_hash
+RUN git clone https://github.com/thetaspere/theta_hash
 RUN cd theta_hash && python3 setup.py install
 
 ARG USER_ID=1000
