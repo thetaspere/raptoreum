@@ -1,5 +1,6 @@
 Theta Core staging tree 0.17
 ===========================
+Theta is good for nothing unless you know the value of it by experience.
 
 |CI|master|develop|
 |-|-|-|
@@ -12,10 +13,11 @@ Theta Core staging tree 0.17
 **Coin Symbol:** | θ
 **Initial block reward:** | 4 θ - 5000 θ
 **Average block time:** | 120 Second
-**Smartnode Payments Start Block**: | 8400
+**Smartnode Payments Start Block**: | 5761
 **Algorithm:** | GhostRider (ASIC and FPGA resistance)
 **Premine:** | none
 **Block Reward:** | 70% Miners 25% Smartnode 3% Dev 1% Exchange 1 % Community Reward.
+**Donation:** | 1PWUCof4ucq6N4trahdCpTghYz7cdDwT3t
 
 Theta is now a code fork of Dash and inherits current and optionally future features such as chain locks, oracles etc. We are further expanding capabilities by adding the following features:
 A)	The deployment of a unique asset layer.

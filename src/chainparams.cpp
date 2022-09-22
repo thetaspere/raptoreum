@@ -567,9 +567,14 @@ public:
         vSeeds.emplace_back("peer2.thetaspere.com");
         vSeeds.emplace_back("peer3.thetaspere.com");
         vSeeds.emplace_back("peer4.thetaspere.com");
+        vSeeds.emplace_back("peer5.thetaspere.com");
+        vSeeds.emplace_back("peer6.thetaspere.com");
+        vSeeds.emplace_back("peer7.thetaspere.com");
+        vSeeds.emplace_back("peer8.thetaspere.com");
+        vSeeds.emplace_back("peer9.thetaspere.com");
+        vSeeds.emplace_back("peer10.thetaspere.com");
 
-
-        // Raptoreum addresses start with 'r'
+        // Theta addresses start with '1'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
         // Raptoreum script addresses start with '7'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
