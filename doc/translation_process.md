@@ -8,7 +8,7 @@ Transifex is setup to monitor the GitHub repo for updates, and when code contain
 
 Multiple language support is critical in assisting Theta’s global adoption, and growth. One of Theta’s greatest strengths is cross-border money transfers, any help making that easier is greatly appreciated.
 
-See the [Transifex Theta project](https://www.transifex.com/projects/p/theta/) to assist in translations. You should also join the translation mailing list for announcements - see details below.
+See the [Transifex Theta project](https://www.transifex.com/projects/p/thetaspere/) to assist in translations. You should also join the translation mailing list for announcements - see details below.
 
 ### Writing code with translations
 We use automated scripts to help extract translations in both Qt, and non-Qt source files. It is rarely necessary to manually edit the files in `src/qt/locale/`. The translation source files must adhere to the following format:
