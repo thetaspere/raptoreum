@@ -1,4 +1,4 @@
-Theta Core staging tree 0.17
+Theta Core Latest v1.13.17.01
 ===========================
 Theta is good for nothing unless you know the value of it by experience.
 
