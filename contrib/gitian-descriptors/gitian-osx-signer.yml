@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/theta/theta-detached-sigs.git"
+- "url": "https://github.com/bitcoin-core/bitcoin-detached-sigs.git"
   "dir": "signature"
 files:
-- "thetacore-osx-unsigned.tar.gz"
+- "bitcoincore-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
