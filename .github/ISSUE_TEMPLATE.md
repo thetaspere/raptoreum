@@ -2,7 +2,7 @@
 
 This issue tracker is only for technical issues related to Theta Core.
 
-General Theta questions and/or support requests and are best directed to the [Theta Discord](https://discord.com/invite/2T8xG7e).
+General Theta questions and/or support requests and are best directed to the [Theta Discord](https://discord.com/invite/3hCrHQa8hn).
 
 To report critical security issues, DM the Core or Developer Teams instead of creating Github issues.
 
