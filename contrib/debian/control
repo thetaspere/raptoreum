@@ -1,8 +1,8 @@
 Source: theta
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@theta.org>
-Uploaders: Holger Schinzel <holger@theta.org>
+Maintainer: Soosho <soosho@thetaspere.com>
+Uploaders: Soosho <soosho@thetaspere.com>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -26,9 +26,9 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.theta.org/
-Vcs-Git: git://github.com/theta/theta.git
-Vcs-Browser: https://github.com/theta/theta
+Homepage: https://thetaspere.com/
+Vcs-Git: git://github.com/thetaspere/theta.git
+Vcs-Browser: https://github.com/thetaspere/theta
 
 Package: thetad
 Architecture: any

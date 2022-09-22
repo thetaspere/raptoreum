@@ -11,11 +11,11 @@ packages:
 - "libtool"
 - "pkg-config"
 remotes:
-- "url": "https://github.com/theta/theta-detached-sigs.git"
+- "url": "https://github.com/bitcoin/bitcoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "osslsigncode-2.0.tar.gz"
-- "thetacore-win-unsigned.tar.gz"
+- "bitcoincore-win-unsigned.tar.gz"
 script: |
   BUILD_DIR=`pwd`
   SIGDIR=${BUILD_DIR}/signature/win

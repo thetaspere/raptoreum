@@ -30,7 +30,7 @@ packages:
 - "fonts-tuffy"
 - "ccache"
 remotes:
-- "url": "https://github.com/theta/theta.git"
+- "url": "https://github.com/thetaspere/theta.git"
   "dir": "theta"
 files:
 - "MacOSX10.11.sdk.tar.gz"

@@ -1,7 +1,7 @@
 Theta Core
 ==========
 
-This is the official reference wallet for Theta digital currency and comprises the backbone of the Theta peer-to-peer network. You can [download Theta Core](https://www.theta.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Theta digital currency and comprises the backbone of the Theta peer-to-peer network. You can [download Theta Core](https://github.com/thetaspere/theta/releases) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -24,12 +24,11 @@ Drag Theta-Qt to your applications folder, and then run Theta-Qt.
 
 ### Need Help?
 
-* See the [Theta documentation](https://docs.theta.org)
+* See the [Theta documentation](https://docs.thetaspere.com)
 for help and more information.
-* See the [Theta Developer Documentation](https://theta-docs.github.io/) 
+* See the [Theta Developer Documentation](https://thetaspere-docs.github.io/) 
 for technical specifications and implementation details.
-* Ask for help on [Theta Nation Discord](http://thetachat.org)
-* Ask for help on the [Theta Forum](https://theta.org/forum)
+* Ask for help on [Theta Nation Discord](https://discord.com/invite/3hCrHQa8hn)
 
 Building
 ---------------------
@@ -59,8 +58,7 @@ The Theta Core repo's [root README](/README.md) contains relevant information on
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Theta Forum](https://theta.org/forum), in the Development & Technical Discussion board.
-* Discuss on [Theta Nation Discord](http://thetachat.org)
+* Discuss on [Theta Nation Discord](https://discord.com/invite/3hCrHQa8hn)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

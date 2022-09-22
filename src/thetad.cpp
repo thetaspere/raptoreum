@@ -1,7 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2021 The Dash Core developers
-// Copyright (c) 2020-2022 The Theta developers
+// Copyright (c) 2020-2022 The Raptoreum developers
+// Copyright (c) 2022 The Theta developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -33,7 +34,7 @@
  *
  * \section intro_sec Introduction
  *
- * This is the developer documentation of the reference client for an experimental new digital currency called Theta (https://www.theta.org/),
+ * This is the developer documentation of the reference client for an experimental new digital currency called Theta (https://www.thetaspere.com/),
  * which enables instant payments to anyone, anywhere in the world. Theta uses peer-to-peer technology to operate
  * with no central authority: managing transactions and issuing money are carried out collectively by the network.
  *
