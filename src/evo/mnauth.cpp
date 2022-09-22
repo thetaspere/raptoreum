@@ -39,7 +39,8 @@ void CMNAuth::PushMNAUTH(CNode* pnode, CConnman& connman)
         if (Params().NetworkIDString() != CBaseChainParams::MAIN && gArgs.IsArgSet("-pushversion")) {
             nOurNodeVersion = gArgs.GetArg("-pushversion", PROTOCOL_VERSION);
         }
-        if (pnode->nVersion < MNAUTH_NODE_VER_VERSION || nOurNodeVersion < MNAUTH_NODE_VER_VERSION) {
+        bool isV17active = Params().IsFutureActive(chainActive.Tip());
+        if (pnode->nVersion < MNAUTH_NODE_VER_VERSION || nOurNodeVersion < MNAUTH_NODE_VER_VERSION || !isV17active) {
             signHash = ::SerializeHash(std::make_tuple(*activeSmartnodeInfo.blsPubKeyOperator, pnode->receivedMNAuthChallenge, pnode->fInbound));
         } else {
             signHash = ::SerializeHash(std::make_tuple(*activeSmartnodeInfo.blsPubKeyOperator, pnode->receivedMNAuthChallenge, pnode->fInbound, nOurNodeVersion));
