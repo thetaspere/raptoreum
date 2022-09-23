@@ -90,6 +90,9 @@ jobs:
           make -C depends -j$(nproc)
       - name: configure
         run: |
+          cd depends
+          make HOST=x86_64-pc-linux-gnu
+          cd ..
           ./autogen.sh
           ./configure --prefix=`pwd`/depends/x86_64-pc-linux-gnu
       - name: build binary
