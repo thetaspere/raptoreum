@@ -2,6 +2,8 @@ Theta Core Latest v1.13.17.01
 ===========================
 Theta is good for nothing unless you know the value of it by experience.
 
+[![Theta Build](https://github.com/thetaspere/theta/actions/workflows/build.yaml/badge.svg?branch=master)](https://github.com/thetaspere/theta/actions/workflows/build.yaml)
+
 |CI|master|develop|
 |-|-|-|
 
