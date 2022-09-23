@@ -21,8 +21,8 @@ Loaded in GUIUtil::loadStyleSheet() in guitil.cpp.
 
 #00000000
 #333
-#00599a
-#27507a
+#4470ad
+#6888be
 #2d2d2e
 #323233
 #363637
@@ -78,7 +78,7 @@ QComboBox,
 QPlainTextEdit,
 QLineEdit {
     background-color: #2d2d2e;
-    border-color: #00599a;
+    border-color: #4470ad;
     color: #c7c7c7;
 }
 
@@ -88,7 +88,7 @@ QComboBox:hover:!focus,
 QPlainTextEdit:hover:!focus,
 QLineEdit:hover:!focus {
     background-color: #2d2d2e;
-    border-color: #27507a;
+    border-color: #6888be;
 }
 
 
@@ -99,7 +99,7 @@ QComboBox:focus,
 QPlainTextEdit:focus,
 QLineEdit:focus {
     background-color: #39393b;
-    border-color: #27507a;
+    border-color: #6888be;
 }
 
 BitcoinAmountField:disabled,
@@ -280,12 +280,12 @@ QHeaderView
 ******************************************************/
 
 QHeaderView::section { /* Table Header Sections */
-    background-color: #00599a;
+    background-color: #4470ad;
     color: #c7c7c7;
 }
 
 QHeaderView::section:hover { /* Table Header Sections */
-    background-color: #27507a;
+    background-color: #6888be;
     color: #c7c7c7;
 }
 
@@ -349,7 +349,7 @@ QProgressBar {
 }
 
 QProgressBar::chunk {
-    background-color: #00599a;
+    background-color: #4470ad;
 }
 
 /******************************************************
@@ -366,12 +366,12 @@ QPushButton
 ******************************************************/
 
 QPushButton {
-    background-color: #00599a;
+    background-color: #4470ad;
     color: #c7c7c7;
 }
 
 QPushButton:hover {
-    background-color: #27507a;
+    background-color: #6888be;
 }
 
 QPushButton:focus {
@@ -380,7 +380,7 @@ QPushButton:focus {
 }
 
 QPushButton:pressed {
-    background-color: #00599a;
+    background-color: #4470ad;
 }
 
 QPushButton:disabled {
@@ -482,7 +482,7 @@ QPushButton - Special case, tabbar replacement buttons
 /* Sign/Verify dialog buttons */
 #btnSignMessage,
 #btnVerifyMessage {
-    border-color: #00599a;
+    border-color: #4470ad;
     color: #818181;
 }
 
@@ -522,7 +522,7 @@ QPushButton - Special case, tabbar replacement buttons
 /* Sign/Verify dialog buttons */
 #btnSignMessage:hover:!checked,
 #btnVerifyMessage:hover:!checked {
-    border-color: #00599a;
+    border-color: #4470ad;
     color: #c7c7c7;
 }
 
@@ -591,10 +591,10 @@ QSlider
 ******************************************************/
 
 QSlider::handle:horizontal {
-	background-color: #00599a;
+	background-color: #4470ad;
 }
 QSlider::handle:horizontal:hover {
-	background-color: #27507a;
+	background-color: #6888be;
 }
 QSlider::sub-page:horizontal {
 	background-color: #c7c7c7;
@@ -662,7 +662,7 @@ QToolBar / QToolButton
 ******************************************************/
 
 QToolBar {
-    background-color: #00599a;
+    background-color: #4470ad;
 }
 
 QToolBar > QToolButton {
@@ -671,7 +671,7 @@ QToolBar > QToolButton {
 }
 
 QToolBar > QToolButton:hover:!checked {
-    background-color: #27507a;
+    background-color: #6888be;
     color: #c7c7c7;
 }
 
