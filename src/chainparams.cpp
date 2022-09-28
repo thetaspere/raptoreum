@@ -541,7 +541,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_V17].nFalloffCoeff = 5; // this corresponds to 10 periods
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0"); // 0
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000006bbe20e0c0f"); // 0
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x0"); // 0
@@ -563,16 +563,16 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0xf4c6228191209d4f070b706f785d822ae10085eb992d5dae46752727e45c39a8"));
         assert(genesis.hashMerkleRoot == uint256S("0xb1baf4f0b5f9757275565eabdd3e3b0491004c52da22c396ba711839764b60bd"));
 
-        vSeeds.emplace_back("peer1.thetaspere.com");
-        vSeeds.emplace_back("peer2.thetaspere.com");
-        vSeeds.emplace_back("peer3.thetaspere.com");
-        vSeeds.emplace_back("peer4.thetaspere.com");
-        vSeeds.emplace_back("peer5.thetaspere.com");
-        vSeeds.emplace_back("peer6.thetaspere.com");
-        vSeeds.emplace_back("peer7.thetaspere.com");
-        vSeeds.emplace_back("peer8.thetaspere.com");
-        vSeeds.emplace_back("peer9.thetaspere.com");
-        vSeeds.emplace_back("peer10.thetaspere.com");
+        vSeeds.emplace_back("116.203.189.59");
+        vSeeds.emplace_back("192.227.193.69");
+        vSeeds.emplace_back("95.111.233.107");
+        vSeeds.emplace_back("192.210.203.202");
+        vSeeds.emplace_back("150.136.60.139");
+        vSeeds.emplace_back("45.40.31.118");
+        vSeeds.emplace_back("11.88.14.70");
+        vSeeds.emplace_back("38.242.217.32");
+        vSeeds.emplace_back("62.171.150.125");
+        vSeeds.emplace_back("62.171.150.125");
 
         // Theta addresses start with '1'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
@@ -636,16 +636,16 @@ public:
         fBIP9CheckSmartnodesUpgraded = true;
 
         checkpointData = {
-          {  {0, uint256S("0xf4c6228191209d4f070b706f785d822ae10085eb992d5dae46752727e45c39a8")}
+          {  {6707, uint256S("0xb97ab11bd356bf686089d691ced204ff4c6483462b3943637c467c55d9347a1d")}
 
           }
         };
 
         chainTxData = ChainTxData{
-            1663335170,   // * UNIX timestamp of last known number of transactions (Block 0)
-            0,   // * total number of transactions between genesis and that timestamp
+            1664371323,   // * UNIX timestamp of last known number of transactions (Block 0)
+            2,   // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            0.0    // * estimated number of transactions per second after that timestamp
+            0.0152    // * estimated number of transactions per second after that timestamp
         };
     }
 };
