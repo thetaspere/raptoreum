@@ -100,8 +100,8 @@ jobs:
           make -j$(nproc)
           mkdir -p $BUILD_DIR
           mkdir -p ${BUILD_DIR}_not_strip
-          cp src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} ${BUILD_DIR}_not_strip/
+          cp src/{theta-cli,thetad,qt/theta-qt} $BUILD_DIR/
+          mv src/{theta-cli,thetad,qt/theta-qt} ${BUILD_DIR}_not_strip/
           strip $BUILD_DIR/*
       - name: build debug binary
         run: |
@@ -111,7 +111,7 @@ jobs:
           ./configure --prefix=`pwd`/depends/x86_64-pc-linux-gnu --disable-tests --enable-debug
           make -j$(nproc)
           mkdir -p ${BUILD_DIR}_debug
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} ${BUILD_DIR}_debug/
+          mv src/{theta-cli,thetad,qt/theta-qt} ${BUILD_DIR}_debug/
       - name: generate checksum and compress
         run: |
           mkdir -p ${COMPRESS_DIR}
@@ -193,8 +193,8 @@ jobs:
           make -j$(nproc)
           mkdir -p $BUILD_DIR
           mkdir -p ${BUILD_DIR}_not_strip
-          cp src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} ${BUILD_DIR}_not_strip/
+          cp src/{theta-cli,thetad,qt/theta-qt} $BUILD_DIR/
+          mv src/{theta-cli,thetad,qt/theta-qt} ${BUILD_DIR}_not_strip/
           strip $BUILD_DIR/*
       - name: build debug binary
         run: |
@@ -204,7 +204,7 @@ jobs:
           ./configure --prefix=`pwd`/depends/x86_64-pc-linux-gnu --disable-tests --enable-debug
           make -j$(nproc)
           mkdir -p ${BUILD_DIR}_debug
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} ${BUILD_DIR}_debug/
+          mv src/{theta-cli,thetad,qt/theta-qt} ${BUILD_DIR}_debug/
       - name: generate checksum and compress
         run: |
           mkdir -p ${COMPRESS_DIR}
@@ -285,8 +285,8 @@ jobs:
           make -j8
           mkdir -p $BUILD_DIR
           mkdir -p ${BUILD_DIR}_not_strip
-          cp src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} ${BUILD_DIR}_not_strip/
+          cp src/{theta-cli,thetad,qt/theta-qt} $BUILD_DIR/
+          mv src/{theta-cli,thetad,qt/theta-qt} ${BUILD_DIR}_not_strip/
           strip $BUILD_DIR/*
       - name: generate checksum and compress
         run: |
@@ -371,7 +371,7 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
+          mv src/{theta-cli,thetad,qt/theta-qt} $BUILD_DIR/
       - name: build debug binary
         run: |
           make clean
@@ -380,7 +380,7 @@ jobs:
           ./configure --prefix=`pwd`/depends/arm-linux-gnueabihf --disable-tests --enable-debug
           make -j$(nproc)
           mkdir -p ${BUILD_DIR}_debug
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} ${BUILD_DIR}_debug/
+          mv src/{theta-cli,thetad,qt/theta-qt} ${BUILD_DIR}_debug/
       - name: generate checksum and compress binary
         run: |
           mkdir -p ${COMPRESS_DIR}
@@ -449,7 +449,7 @@ jobs:
         run: |
           make -j$(nproc)
           mkdir -p $BUILD_DIR
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} $BUILD_DIR/
+          mv src/{theta-cli,thetad,qt/theta-qt} $BUILD_DIR/
       - name: build debug binary
         run: |
           make clean
@@ -458,7 +458,7 @@ jobs:
           ./configure --prefix=`pwd`/depends/aarch64-linux-gnu --disable-tests --enable-debug
           make -j$(nproc)
           mkdir -p ${BUILD_DIR}_debug
-          mv src/{theta-cli,theta-tx,thetad,qt/theta-qt} ${BUILD_DIR}_debug/
+          mv src/{theta-cli,thetad,qt/theta-qt} ${BUILD_DIR}_debug/
       - name: generate checksum and compress binary
         run: |
           mkdir -p ${COMPRESS_DIR}
@@ -531,8 +531,8 @@ jobs:
           make -j$(nproc)
           mkdir -p $BUILD_DIR
           mkdir -p ${BUILD_DIR}_not_strip
-          cp src/{theta-cli.exe,theta-tx.exe,thetad.exe,qt/theta-qt.exe} $BUILD_DIR/
-          mv src/{theta-cli.exe,theta-tx.exe,thetad.exe,qt/theta-qt.exe} ${BUILD_DIR}_not_strip/
+          cp src/{theta-cli.exe,thetad.exe,qt/theta-qt.exe} $BUILD_DIR/
+          mv src/{theta-cli.exe,thetad.exe,qt/theta-qt.exe} ${BUILD_DIR}_not_strip/
           strip $BUILD_DIR/*
       - name: generate checksum and compress binary
         run: |
